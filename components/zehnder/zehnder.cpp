@@ -361,6 +361,8 @@ void ZehnderRF::rfHandleReceived(const uint8_t *const pData, const uint8_t dataL
 
             this->state = pResponse->payload.fanSettings.speed > 0;
             this->speed = pResponse->payload.fanSettings.speed;
+            this->timer = pResponse->payload.fanSettings.timer;
+            this->voltage = pResponse->payload.fanSettings.voltage;
             this->publish_state();
 
             this->state_ = StateIdle;

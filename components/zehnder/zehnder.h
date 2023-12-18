@@ -80,6 +80,9 @@ class ZehnderRF : public Component, public fan::Fan {
 
   void setSpeed(const uint8_t speed, const uint8_t timer = 0);
 
+  bool timer;
+  int voltage;
+
  protected:
   void queryDevice(void);
 
